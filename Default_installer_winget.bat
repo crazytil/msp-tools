@@ -36,8 +36,9 @@ IF /I "%OFFICE%"=="N" GOTO EOF
 
 :Office
 ECHO Installing Office 365
-(cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1)
-
+(cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/O365/setup.exe" -o setup.exe)
+(cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/O365/Configuration.xml" -o config.xml)
+%temp%\setup.exe /configure %temp%\config.xml
 goto :EOF
 
 :EOF
