@@ -16,7 +16,9 @@ GOTO check_Permissions
         ECHO Please restart file as administrator
         ECHO:
         PAUSE
+        EXIT
     )
+
 
 
 
