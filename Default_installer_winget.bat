@@ -31,7 +31,6 @@ ECHO:
 ECHO Checking if winget is installed
 ECHO:
 ECHO Current Winget version:
-ECHO:
 winget -v
 ECHO:
 
