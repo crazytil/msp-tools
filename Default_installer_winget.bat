@@ -17,7 +17,7 @@ GOTO check_Permissions
     ) ELSE (
         ECHO Current permissions inadequate
         ECHO:
-        ECHO Please restart file as administrator
+        ECHO Restarting file as administrator
         ECHO:
         PAUSE
         powershell Start-Process -FilePath "%0" -ArgumentList "%cd%" -verb runas >NUL 2>&1
