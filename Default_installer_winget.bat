@@ -4,8 +4,9 @@ COLOR 0a
 GOTO check_Permissions
 
 :check_Permissions
-    ECHO   Administrative permissions required.
-    ECHO   Detecting permissions...
+    ECHO:
+    ECHO   Checking for administrative permissions...
+    ECHO:
     
     net session >nul 2>&1
     if %errorLevel% == 0 (
@@ -23,6 +24,7 @@ GOTO check_Permissions
 
 
 :Winget_check
+CLS
 ECHO:
 ECHO   Checking if winget is installed
 ECHO:
