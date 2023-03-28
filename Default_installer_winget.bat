@@ -1,5 +1,26 @@
 @echo off
 
+GOTO check_Permissions
+
+:check_Permissions
+    echo Administrative permissions required. Detecting permissions...
+    
+    net session >nul 2>&1
+    if %errorLevel% == 0 (
+        ECHO Success: Administrative permissions confirmed.
+        timeout 3 >nul
+        GOTO Winget_check
+    ) else (
+        ECHO Failure: Current permissions inadequate.
+        ECHO:
+        ECHO Please restart file as administrator
+        ECHO:
+        PAUSE
+    )
+
+
+
+:Winget_check
 ECHO:
 ECHO   Checking if winget is installed
 ECHO:
