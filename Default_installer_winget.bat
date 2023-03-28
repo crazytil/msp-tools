@@ -4,6 +4,7 @@ COLOR 0a
 GOTO check_Permissions
 
 :check_Permissions
+    TIMEOUT 2 >nul
     ECHO:
     ECHO   Checking for administrative permissions...
     ECHO:
@@ -11,7 +12,7 @@ GOTO check_Permissions
     net session >nul 2>&1
     if %errorLevel% == 0 (
         ECHO   Administrative permissions confirmed
-        timeout 3 >nul
+        TIMEOUT 3 >nul
         GOTO Winget_check
     ) else (
         ECHO   Current permissions inadequate
