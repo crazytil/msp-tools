@@ -24,7 +24,7 @@ ECHO   3. Install Office 365
 ECHO   4. Run Winget Updates
 ECHO   X. Exit
 SET INSTALL=
-SET /P "INSTALL=. Select option (1-4)? "
+SET /P "INSTALL=  Select option (1-4)? "
 IF /I "%INSTALL%"=="1" GOTO Default_Apps
 if /I "%INSTALL%"=="2" GOTO Default_Apps
 if /I "%INSTALL%"=="3" GOTO Office
