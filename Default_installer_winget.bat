@@ -9,10 +9,10 @@ ECHO:
 
 :Winget_test
 SET WINGET=
-SET /P "WINGET=  Is winget installed (Y/N)? "
+SET /P "WINGET=  Is winget installed (Y/n)? "
 IF /I "%WINGET%"=="N" GOTO winget
 IF /I "%WINGET%"=="Y" GOTO Question
-goto Winget_test
+goto Question
 
 :Question
 CLS
