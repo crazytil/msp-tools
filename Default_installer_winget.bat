@@ -10,10 +10,10 @@ ECHO:
 SET WINGET=
 SET /P "WINGET=Is winget installed (Y/N)? "
 IF /I "%WINGET%"=="N" GOTO winget
-IF /I "%WINGET%"=="Y" GOTO Prompt
+IF /I "%WINGET%"=="Y" GOTO Question
 goto Winget_test
 
-:Prompt
+:Question
 CLS
 ECHO:
 ECHO:
@@ -27,7 +27,7 @@ IF /I "%INSTALL%"=="1" GOTO Default_Apps
 if /I "%INSTALL%"=="2" GOTO Default_Apps
 if /I "%INSTALL%"=="3" GOTO Office
 if /I "%INSTALL%"=="4" GOTO Updater
-GOTO Prompt
+GOTO Question
 
 
 
@@ -36,7 +36,7 @@ GOTO Prompt
 echo Installing Winget
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1)
 powershell -ExecutionPolicy Bypass -File %temp%\installwinget.ps1
-goto Prompt
+goto Question
 
 
 :Default_Apps
