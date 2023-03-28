@@ -35,13 +35,16 @@ GOTO Question
 
 
 :winget
-echo Installing Winget
+CLS
+ECHO Installing Winget
+ECHO:
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1)
 powershell -ExecutionPolicy Bypass -File %temp%\installwinget.ps1
-goto Question
+GOTO Question
 
 
 :Default_Apps
+CLS
 ECHO Installing default programs
 ECHO:
 winget install --id=Microsoft.Teams -e -h --accept-source-agreements  --accept-package-agreements 
@@ -56,7 +59,9 @@ GOTO Question
 
 
 :Office
+CLS
 ECHO Installing Office 365
+ECHO:
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/O365/setup.exe" -o setup.exe)
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/O365/Configuration.xml" -o config.xml)
 %temp%\setup.exe /configure %temp%\config.xml
@@ -64,6 +69,9 @@ GOTO Question
 
 
 :Updater
+CLS
+ECHO Updating apps using Winget
+ECHO:
 winget upgrade --all -h
 GOTO Question
 
