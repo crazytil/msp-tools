@@ -3,17 +3,18 @@
 GOTO check_Permissions
 
 :check_Permissions
-    echo Administrative permissions required. Detecting permissions...
+    ECHO   Administrative permissions required.
+    ECHO   Detecting permissions...
     
     net session >nul 2>&1
     if %errorLevel% == 0 (
-        ECHO Success: Administrative permissions confirmed.
+        ECHO   Administrative permissions confirmed.
         timeout 3 >nul
         GOTO Winget_check
     ) else (
-        ECHO Failure: Current permissions inadequate.
+        ECHO   Current permissions inadequate.
         ECHO:
-        ECHO Please restart file as administrator
+        ECHO   Please restart file as administrator
         ECHO:
         PAUSE
         EXIT
