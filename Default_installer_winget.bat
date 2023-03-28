@@ -10,6 +10,7 @@ ECHO:
 SET WINGET=
 SET /P "WINGET=Is winget installed (Y/N)? "
 IF /I "%WINGET%"=="N" GOTO winget
+IF /I "%WINGET%"=="Y" GOTO Prompt
 goto Winget_test
 
 :Prompt
