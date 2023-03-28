@@ -1,6 +1,5 @@
 @echo off
 TITLE Default setup rollout script
-COLOR 0a
 GOTO check_Permissions
 
 :check_Permissions
