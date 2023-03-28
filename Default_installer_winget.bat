@@ -21,7 +21,8 @@ GOTO check_Permissions
         ECHO   Please restart file as administrator
         ECHO:
         PAUSE
-        EXIT
+        powershell Start-Process -FilePath "%0" -ArgumentList "%cd%" -verb runas >NUL 2>&1
+        EXIT /b
     )
 
 
