@@ -1,5 +1,6 @@
 @echo off
 
+ECHO:
 ECHO   Checking if winget is installed
 ECHO:
 ECHO   Current Winget version:
@@ -36,6 +37,7 @@ GOTO Question
 
 :winget
 CLS
+ECHO:
 ECHO   Installing Winget
 ECHO:
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1)
@@ -45,6 +47,7 @@ GOTO Question
 
 :Default_Apps
 CLS
+ECHO:
 ECHO   Installing default programs
 ECHO:
 winget install --id=Microsoft.Teams -e -h --accept-source-agreements  --accept-package-agreements 
@@ -60,6 +63,7 @@ GOTO Question
 
 :Office
 CLS
+ECHO:
 ECHO   Installing Office 365
 ECHO:
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/O365/setup.exe" -o setup.exe)
@@ -70,6 +74,7 @@ GOTO Question
 
 :Updater
 CLS
+ECHO:
 ECHO   Updating apps using Winget
 ECHO:
 winget upgrade --all -h
