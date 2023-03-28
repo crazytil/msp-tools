@@ -36,7 +36,8 @@ IF /I "%OFFICE%"=="N" GOTO EOF
 
 :Office
 ECHO Installing Office 365
-winget install --id=Microsoft.Office -e -h 
+(cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1)
+
 goto :EOF
 
 :EOF
