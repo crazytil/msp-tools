@@ -107,5 +107,6 @@ GOTO Question
 
 
 :EOF
-Echo All done!
-PAUSE
+ECHO All done!
+ECHO Press any key to exit . . .
+PAUSE >nul
