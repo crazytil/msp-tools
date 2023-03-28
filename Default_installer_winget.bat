@@ -15,7 +15,6 @@ if /I "%WINGET%"=="Y" GOTO cont
 echo Installing Winget
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1)
 powershell -ExecutionPolicy Bypass -File %temp%\installwinget.ps1
-del installwinget.ps1 /q
 goto cont
 
 
