@@ -2,8 +2,8 @@
 
 ECHO Checking if winget is installed
 ECHO:
+ECHO Current Winget version:
 winget -v
-ECHO:
 ECHO:
 
 SET WINGET=
@@ -12,7 +12,7 @@ IF /I "%WINGET%"=="N" GOTO winget
 if /I "%WINGET%"=="Y" GOTO cont
 
 :winget
-echo Installing Winget (ignore errors)
+echo Installing Winget
 curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1
 powershell -ExecutionPolicy Bypass -File installwinget.ps1
 del installwinget.ps1 /q
@@ -31,7 +31,7 @@ winget install --id=VideoLAN.VLC -e -h
 ECHO:
 
 SET OFFICE=
-SET /P OFFICE=Does Office 365 need to be installed (Y/N)?
+SET /P "OFFICE=Does Office 365 need to be installed (Y/N)? "
 IF /I "%OFFICE%"=="Y" GOTO Office
 IF /I "%OFFICE%"=="N" GOTO EOF
 
