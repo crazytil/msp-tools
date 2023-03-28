@@ -1,14 +1,14 @@
 @echo off
 
-ECHO Checking if winget is installed
+ECHO   Checking if winget is installed
 ECHO:
-ECHO Current Winget version:
+ECHO   Current Winget version:
 winget -v
 ECHO:
 
 :Winget_test
 SET WINGET=
-SET /P "WINGET=Is winget installed (Y/N)? "
+SET /P "WINGET=  Is winget installed (Y/N)? "
 IF /I "%WINGET%"=="N" GOTO winget
 IF /I "%WINGET%"=="Y" GOTO Question
 goto Winget_test
@@ -23,7 +23,7 @@ ECHO   3. Install Office 365
 ECHO   4. Run Winget Updates
 ECHO   X. Exit
 SET INSTALL=
-SET /P "INSTALL=Select option (1-4)? "
+SET /P "INSTALL=. Select option (1-4)? "
 IF /I "%INSTALL%"=="1" GOTO Default_Apps
 if /I "%INSTALL%"=="2" GOTO Default_Apps
 if /I "%INSTALL%"=="3" GOTO Office
@@ -36,7 +36,7 @@ GOTO Question
 
 :winget
 CLS
-ECHO Installing Winget
+ECHO   Installing Winget
 ECHO:
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/installwinget.ps1" -o installwinget.ps1)
 powershell -ExecutionPolicy Bypass -File %temp%\installwinget.ps1
@@ -45,7 +45,7 @@ GOTO Question
 
 :Default_Apps
 CLS
-ECHO Installing default programs
+ECHO   Installing default programs
 ECHO:
 winget install --id=Microsoft.Teams -e -h --accept-source-agreements  --accept-package-agreements 
 winget install --id=Adobe.Acrobat.Reader.64-bit -e -h 
@@ -60,7 +60,7 @@ GOTO Question
 
 :Office
 CLS
-ECHO Installing Office 365
+ECHO   Installing Office 365
 ECHO:
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/O365/setup.exe" -o setup.exe)
 (cd %temp% && curl "https://raw.githubusercontent.com/crazytil/msp-tools/main/O365/Configuration.xml" -o config.xml)
@@ -70,12 +70,12 @@ GOTO Question
 
 :Updater
 CLS
-ECHO Updating apps using Winget
+ECHO   Updating apps using Winget
 ECHO:
 winget upgrade --all -h
 GOTO Question
 
 
 :EOF
-Echo All done!
+Echo   All done!
 PAUSE
