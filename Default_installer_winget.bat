@@ -6,10 +6,11 @@ ECHO Current Winget version:
 winget -v
 ECHO:
 
-
+:Winget_test
 SET WINGET=
 SET /P "WINGET=Is winget installed (Y/N)? "
 IF /I "%WINGET%"=="N" GOTO winget
+goto Winget_test
 
 :Prompt
 CLS
@@ -18,7 +19,7 @@ ECHO:
 ECHO 1. Install all apps
 ECHO 2. Install default apps (Exclude Office 365)
 ECHO 3. Install Office 365
-ECHO 4. Install Office 365
+ECHO 4. Run Winget Updates
 SET INSTALL=
 SET /P "INSTALL=Select option (1-4)? "
 IF /I "%INSTALL%"=="1" GOTO Default_Apps
