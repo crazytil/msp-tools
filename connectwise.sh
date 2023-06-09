@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-curl -o /tmp/scclient.pkg 'https://connectedplatforms.screenconnect.com/Bin/ConnectWiseControl.ClientSetup.pkg?e=Access&y=Guest&h=instance-r0qwjo-relay.screenconnect.com&p=443&k=BgIAAACkAABSU0ExAAgAAAEAAQAxiXOwPtX1T25c3e4DBt8etlizV73KNGRdUQV8pQJCEdpvfN0uMokqBlBrd9OXRd4rQJEH14hw9ZMyEfW17I6UlX8PJodz1PEyI%2bD4iJS8YyxZgHqSNNQ6U6VsolxILIWIN%2bFmQn%2bZdXXUZRFeY0CplYKI5ENVF6w09todroHGN8i5TbIAU%2bXNSRpVQrYMtL0o4Yz3GbznAWhp1BccD7f5VIzaCkgcQLIY7tyyB%2bi1RuMaviJP5cRyEGCAyMF0D5rc4gxLYpjOFy7VxE28IgJAAyce9U38OYWGuqWhflCM%2f6zIxi1Adinzz%2bXLy5RXpTr52BDZfvJQSCSTnAsVbNPg&c=&c=&c=&c=&c=&c=&c=&c='
-installer -pkg /tmp/scclient.pkg -tgt /
